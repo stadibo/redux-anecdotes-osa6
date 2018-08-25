@@ -1,20 +1,19 @@
 import React from 'react'
 import ConnectedNotification from './components/Notification'
-import AnecdoteForm from './components/AnecdoteForm'
-import AnecdoteList from './components/AnecdoteList'
-import Filter from './components/Filter'
+import ConnectedAnecdoteForm from './components/AnecdoteForm'
+import ConnectedAnecdoteList from './components/AnecdoteList'
+import ConnectedFilter from './components/Filter'
 
 class App extends React.Component {
 
   render() {
-    //const anecdotes = this.props.store.getState()
     return (
       <div>
         <h1>Programming anecdotes</h1>
         <ConnectedNotification />
-        <Filter />
-        <AnecdoteList />
-        <AnecdoteForm />
+        <ConnectedFilter />
+        <ConnectedAnecdoteList />
+        <ConnectedAnecdoteForm />
       </div>
     )
   }
