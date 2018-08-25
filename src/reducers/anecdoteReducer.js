@@ -31,7 +31,7 @@ const voteOnAnecdote = (id) => {
 }
 
 const anecdoteReducer = (store = initialState, action) => {
-  console.log('ACTION: ', action)
+  //console.log('ACTION: ', action)
   if (action.type === 'VOTE') {
     const old = store.filter(a => a.id !== action.id)
     const voted = store.find(a => a.id === action.id)

@@ -15,7 +15,7 @@ const removeMessage = () => {
 }
 
 const notificationReducer = (store = initialMessage, action) => {
-  console.log('ACTION: ', action)
+  //console.log('ACTION: ', action)
   switch (action.type) {
     case 'SET_MESSAGE':
       return action.message
