@@ -1,16 +1,31 @@
 const initialMessage = ''
 
-const setMessage = (message) => {
-  return {
-    type: 'SET_MESSAGE',
-    message
-  }
-}
+// const setMessage = (message) => {
+//   return {
+//     type: 'SET_MESSAGE',
+//     message
+//   }
+// }
 
-const removeMessage = () => {
-  return {
-    type: 'SET_MESSAGE',
-    message: ''
+// const removeMessage = () => {
+//   return {
+//     type: 'SET_MESSAGE',
+//     message: ''
+//   }
+// }
+
+const notify = (message, time) => {
+  return async (dispatch) => {
+    dispatch({
+      type: 'SET_MESSAGE',
+      message
+    })
+    setTimeout(() => {
+      dispatch({
+        type: 'SET_MESSAGE',
+        message: ''
+      })
+    }, time * 1000)
   }
 }
 
@@ -25,4 +40,4 @@ const notificationReducer = (store = initialMessage, action) => {
 }
 
 export default notificationReducer
-export { setMessage, removeMessage }
+export { notify }
